@@ -1,0 +1,37 @@
+<div class="main-sidebar">
+  <div class="logo">
+
+    <div class="logo-text">
+      <div class="logo-img">
+        <img src="../../../assets/images/avatar1.jpg" />
+      </div>
+      <div class="simple-text logo-normal">
+        Creative Maulik
+      </div>
+    </div>
+    
+    <div class="sidebar-switch" >      
+      <ui-switch [(ngModel)]="isSwitchOn" (change)="onChangeSwitch($event)"></ui-switch>
+    </div>
+    
+
+  </div>
+  
+  <div class="sidebar-wrapper">
+      <ul class="nav">
+          <li
+              routerLinkActive="active"
+              *ngFor="let menuItem of menuItem;let i = index"
+              class="{{ menuItem.class }} nav-item"
+              (click)="onSelectRoute(menuItem,i)"
+          >              
+          
+              <!-- <i class="tim-icons  {{ menuItem.icon }}"></i> -->
+              <fa-icon [icon]="menuItem.icon"></fa-icon>
+              <div class="side-text">{{ menuItem.name }}</div>              
+          </li>
+      </ul>
+  </div>
+</div>
+
+  

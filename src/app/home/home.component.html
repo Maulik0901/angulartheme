@@ -1,0 +1,17 @@
+
+<div class="body-wrapper">
+    <!-- [ngClass]="{'sidenav show': isSidebarVisible, 'sidenav': !isSidebarVisible }" -->
+    <aside  [ngClass]="isSidebarVisible ? 'sidenav show' : 'sidenav' ">
+        <app-sidebar></app-sidebar>
+    </aside>
+
+    <main [ngClass]="isSidebarVisible ? 'main sidenav-show' : 'main' " >
+        <app-navbar></app-navbar>
+        {{isSidebarVisible}}
+        <router-outlet></router-outlet>
+        
+        <footer class="footer"></footer>
+    </main>
+    
+   
+</div>
